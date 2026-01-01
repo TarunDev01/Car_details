@@ -2,14 +2,14 @@ class Car:
     def __init__(self, brand, model, price, mileage):
         self.brand = brand
         self.model = model
-        self.price = price        # price in INR
-        self.mileage = mileage    # km/l
+        self.price = price      # price in INR
+        self.mileage = mileage  # km/l
 
     def full_name(self):
         return f"{self.brand} {self.model}"
 
     def car_details(self):
-        return f"{self.full_name()} | Price: ₹{self.price} | Mileage: {self.mileage} km/l"
+        return f"{self.full_name()} | Price: INR {self.price} | Mileage: {self.mileage} km/l"
 
 
 if __name__ == "__main__":
