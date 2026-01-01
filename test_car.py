@@ -1,4 +1,4 @@
-
+from car import Car
 def test_full_name():
     car = Car("Toyota", "Fortuner", 2022, 4500000)
     assert car.full_name() == "Toyota Fortuner"
