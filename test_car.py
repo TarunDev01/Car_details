@@ -1,34 +1,17 @@
-class Car:
-    def __init__(self, brand, model, year, price):
-        self.brand = brand
-        self.model = model
-        self.year = year
-        self.price = price
+from car import Car
 
-    def full_name(self):
-        return f"{self.brand} {self.model}"
+def test_full_name():
+    car = Car("Toyota", "Fortuner", 2022, 4500000)
+    assert car.full_name() == "Toyota Fortuner"
 
-    def is_luxury(self):
-        return self.price > 2000000  # INR
+def test_is_luxury_true():
+    car = Car("BMW", "X5", 2023, 8000000)
+    assert car.is_luxury() is True
 
-    def car_age(self, current_year):
-        return current_year - self.year
+def test_is_luxury_false():
+    car = Car("Maruti", "Swift", 2021, 800000)
+    assert car.is_luxury() is False
 
-if __name__ == "__main__":
-    print("=== Car Details Input ===")
-
-    brand = input("Enter car brand: ")
-    model = input("Enter car model: ")
-    year = int(input("Enter manufacturing year: "))
-    price = int(input("Enter price (INR): "))
-
-    car = Car(brand, model, year, price)
-
-    print("\n--- Car Information ---")
-    print("Car Name:", car.full_name())
-    print("Car Age:", car.car_age(2025), "years")
-
-    if car.is_luxury():
-        print("Category: Luxury Car 🚘")
-    else:
-        print("Category: Non-Luxury Car 🚗")
+def test_car_age():
+    car = Car("Honda", "City", 2020, 1500000)
+    assert car.car_age(2025) == 5
